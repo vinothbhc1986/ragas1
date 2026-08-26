@@ -1,6 +1,9 @@
 ragas==0.4.3
 langchain-community==0.3.30
-openai
 python-dotenv
 datasets
 langchain-groq
+langchain-huggingface==1.2.2
+sentence-transformers==6.0.0
+panda
+

@@ -1,19 +1,21 @@
+import json
 import os
 from dotenv import load_dotenv
 from datasets import Dataset
-from ragas.llms import llm_factory
 from langchain_huggingface import HuggingFaceEmbeddings
+from openai import OpenAI
+import pandas as pd
+
+from ragas import evaluate
+from ragas.llms import llm_factory
 from ragas.metrics._answer_relevance import answer_relevancy
 from ragas.metrics._faithfulness import faithfulness
-from openai import OpenAI
-from ragas import evaluate
 
 answer_relevancy.strictness = 1
 
 # Load environment variables
 load_dotenv()
 
-# Create Groq LLM
 # Create a Ragas-compatible LLM through Groq's OpenAI-compatible endpoint
 llm = llm_factory(
     model="openai/gpt-oss-20b",
@@ -23,27 +25,38 @@ llm = llm_factory(
     ),
 )
 
+# Read external CSV file using Pandas
+df = pd.read_csv("ragas_sample_data.csv")
+
+# Convert contexts from string to Python list
+df["contexts"] = df["contexts"].apply(json.loads)
+
+# Convert Pandas DataFrame to Hugging Face Dataset
+dataset = Dataset.from_pandas(df)
+
+
+
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
 )
 
 # Sample RAG data
-data = {
-    "question": [
-        "What is the capital of France?"
-    ],
-    "answer": [
-        "The capital of France is Paris."
-    ],
-    "contexts": [
-        [
-            "France is a country in Europe. Paris is the capital of France."
-        ]
-    ],
-}
+# data = {
+#     "question": [
+#         "What is the capital of France?"
+#     ],
+#     "answer": [
+#         "The capital of France is Paris."
+#     ],
+#     "contexts": [
+#         [
+#             "France is a country in Europe. Paris is the capital of France."
+#         ]
+#     ],
+# }
 
 # Convert to Dataset
-dataset = Dataset.from_dict(data)
+# dataset = Dataset.from_dict(data)
 
 # Run Ragas evaluation
 result = evaluate(

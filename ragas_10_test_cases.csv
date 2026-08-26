@@ -1,0 +1,11 @@
+question,answer,contexts
+What is the capital of France?,The capital of France is Paris.,"[""France is a country in Europe. Paris is the capital and largest city of France.""]"
+What is the capital of France?,The capital of France is Berlin.,"[""France is a country in Europe. Paris is the capital and largest city of France.""]"
+What is the largest planet in our solar system?,Jupiter is the largest planet in our solar system.,"[""Jupiter is the largest planet in the Solar System and is a gas giant.""]"
+What is the largest planet in our solar system?,Earth is the largest planet and has three moons.,"[""Jupiter is the largest planet in the Solar System and is a gas giant.""]"
+What is the boiling point of water at sea level?,Water boils at 100 degrees Celsius at standard atmospheric pressure.,"[""At sea level, water reaches its boiling point at 100 degrees Celsius under standard atmospheric pressure.""]"
+What is the boiling point of water at sea level?,Water boils at 50 degrees Celsius.,"[""At sea level, water reaches its boiling point at 100 degrees Celsius under standard atmospheric pressure.""]"
+Who wrote Romeo and Juliet?,Romeo and Juliet was written by William Shakespeare.,"[""Romeo and Juliet is a tragedy written by English playwright William Shakespeare.""]"
+Who wrote Romeo and Juliet?,Romeo and Juliet was written by Charles Dickens.,"[""Romeo and Juliet is a tragedy written by English playwright William Shakespeare.""]"
+What gas do plants absorb during photosynthesis?,Plants absorb carbon dioxide during photosynthesis.,"[""During photosynthesis, plants use carbon dioxide, water, and light energy to produce glucose and oxygen.""]"
+What gas do plants absorb during photosynthesis?,Plants absorb oxygen during photosynthesis and produce carbon dioxide.,"[""During photosynthesis, plants use carbon dioxide, water, and light energy to produce glucose and oxygen.""]"
