@@ -40,25 +40,6 @@ embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
 )
 
-# Sample RAG data
-# data = {
-#     "question": [
-#         "What is the capital of France?"
-#     ],
-#     "answer": [
-#         "The capital of France is Paris."
-#     ],
-#     "contexts": [
-#         [
-#             "France is a country in Europe. Paris is the capital of France."
-#         ]
-#     ],
-# }
-
-# Convert to Dataset
-# dataset = Dataset.from_dict(data)
-
-# Run Ragas evaluation
 result = evaluate(
     dataset,
     metrics=[
