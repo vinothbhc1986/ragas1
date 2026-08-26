@@ -14,4 +14,5 @@
 
 
 ### Run the code:
-py main.py
+
+`py main.py`
